@@ -1,0 +1,39 @@
+<br>
+<h1 style="color: blue">Triovy</h1>
+<h3>Bienvenue <span style="color: green"><%= @user.first_name %><span> !</h3>
+
+<p>Nous avons reçu une demande pour enregistrer cette adresse mail avec votre compte Triovy.<br>
+Pour confirmer que vous êtes le propriétaire de cette adresse mail,<br>
+veuillez cliquer sur le lien ci-dessous :</p>
+
+<h3 style="color: red"><%= link_to 'Confirmer mon compte', confirmation_url(@resource, confirmation_token: @token) %></h3> 
+<!--<h3 style="color: red"><%= link_to 'Confirmer mon compte', "https://www.triovy.com/confirmation?confirmation_token=#{@token}" %></h3> -->
+
+<br>
+<p>Si vous n'avez pas demandé à enregistrer cette adresse mail, veuillez ignorer ce message.</p>
+<p>Merci de votre confiance en Triovy</p>
+<br><br>
+<p>Cordialement,<br>
+L'équipe Triovy<br>
+</p>
+
+<hr>
+<br>
+<h1 style="color: green">Triovy</h1>
+<h3>Welcome <span style="color: green"><%= @user.first_name %></span> !</h3>
+
+
+<p>We received a request to register this email address with your Triovy account.<br>
+To confirm that you are the owner of this email address,<br>
+please click on the link below:</p>
+
+<h3 style="color: red"><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></h3> 
+<!--<h3 style="color: red"><%= link_to 'Confirm my account', "https://www.Triovy.com/confirmation?confirmation_token=#{@token}" %></h3> -->
+
+<br>
+<p>If you have not requested to save this email address, please ignore this message.</p>
+<p>Thank you for trusting Triovy</p>
+<br><br>
+<p>Regards,<br>
+ Triovy team.<br>
+ </p>
