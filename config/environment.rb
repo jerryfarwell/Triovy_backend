@@ -7,7 +7,7 @@ Rails.application.initialize!
 ActionMailer::Base.smtp_settings = {
     address: "smtp.sendgrid.net",
     port: 587,
-    domain: 'http://localhost:3000/',     # this should be replace by the backend link when it is deploy to production
+    domain: 'https://seal-app-jgtns.ondigitalocean.app/',     # this should be replace by the backend link when it is deploy to production
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "apikey",

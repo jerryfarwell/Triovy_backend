@@ -9,13 +9,13 @@ Rails.application.configure do
 
     #-------------------mailer---------------------------
 
-    config.action_mailer.default_url_options = { host: 'https://lobster-app-9v8bb.ondigitalocean.app' }
+    config.action_mailer.default_url_options = { host: 'https://seal-app-jgtns.ondigitalocean.app/' }
   
     config.action_mailer.delivery_method = :smtp
     ActionMailer::Base.smtp_settings = {
       address: "smtp.sendgrid.net",
       port: 587,
-      domain: 'https://lobster-app-9v8bb.ondigitalocean.app',
+      domain: 'https://seal-app-jgtns.ondigitalocean.app/',
       authentication: "plain",
       enable_starttls_auto: true,
       user_name: "apikey",

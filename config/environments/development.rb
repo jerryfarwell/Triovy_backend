@@ -2,6 +2,12 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
 
+
+  Rails.application.routes.default_url_options = {
+    host: 'https://seal-app-jgtns.ondigitalocean.app/'
+  }
+
+
   #--------------------------FROM DEVISE INSTALLATION---------------------------
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   #-----------------------------------------------------------------------------
