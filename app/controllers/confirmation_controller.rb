@@ -3,7 +3,7 @@ class ConfirmationController < Devise::ConfirmationsController
   
     def show
       super do |resource|
-        redirect_to "www.triovy.com/confirmation", allow_other_host: true
+        redirect_to "https://www.triovy.com/confirmation", allow_other_host: true
         return
       end
     end

@@ -16,7 +16,7 @@ class Users::PasswordController < Devise::PasswordsController
         resource = resource_class.new
         set_minimum_password_length
         resource.reset_password_token = params[:reset_password_token]
-        redirect_to "http://localhost:5173/new_password/edit?reset_password_token=#{params[:reset_password_token]}" and return if params[:reset_password_token].present?
+        redirect_to "https://www.triovy.com/new_password/edit?reset_password_token=#{params[:reset_password_token]}" and return if params[:reset_password_token].present?
       
         respond_with(resource)
       end 
