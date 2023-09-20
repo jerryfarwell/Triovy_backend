@@ -53,4 +53,4 @@ gem 'devise-jwt'
 gem 'fast_jsonapi'
 gem 'stripe'
 gem 'turbo-rails'
-
+gem "twilio-ruby", "~> 6.6"

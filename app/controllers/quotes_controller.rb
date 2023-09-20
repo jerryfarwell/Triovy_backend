@@ -30,4 +30,34 @@ class QuotesController < ApplicationController
     params.require(:quote).permit(:first_name, :user_city, :user_number, :user_email, :selectedOption, :textArea)
   end
 
+
+
+#------------------------- this is set for twilio --------------------------------------------------------------
+
+def send_quote_sms(quote)
+  # Initialize Twilio client
+  account_sid = Rails.application.credentials.dig(:twilio, :account_sid)
+  auth_token = Rails.application.credentials.dig(:twilio, :auth_token)
+  @client = Twilio::REST::Client.new(account_sid, auth_token)
+
+  # Compose the SMS message
+  body = "New quote received from #{quote.user_email}: #{quote.textArea}"
+
+  # Replace with your Twilio phone number
+  from_phone = '+17242046854'
+
+  # Replace with your phone number to receive the SMS
+  to_phone = '+33753226897'
+
+  # Send the SMS
+  @client.messages.create(
+    body: body,
+    from: from_phone,
+    to: to_phone
+  )
+
+  puts "SMS sent successfully to #{to_phone}: #{body}"
+end
+
+
 end
