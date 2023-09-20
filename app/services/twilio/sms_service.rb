@@ -23,7 +23,7 @@ class SmsService
       to: '+33753226897'
     )
 
-    puts "Your quote has been sent successfully"
+    puts "Your quote has been sent "
     puts message.sid
   end
 end
