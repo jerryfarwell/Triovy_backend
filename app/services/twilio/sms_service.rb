@@ -8,7 +8,7 @@ class SmsService
     @client = Twilio::REST::Client.new(account_sid, auth_token)
     
     message = @client.messages.create(
-      body: 'hello Boss this the second message',
+      body: 'hello Boss this the second message BOSS',
       from: '+17242046854',
       to: '+33753226897'
     )
