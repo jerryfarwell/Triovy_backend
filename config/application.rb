@@ -11,6 +11,17 @@ module TriovyBackend
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    
+    
+    #this is set here for twilio sms 
+    config.twilio = {
+      account_sid: 'YOUR_TWILIO_ACCOUNT_SID',
+      auth_token: 'YOUR_TWILIO_AUTH_TOKEN',
+      from_phone: 'YOUR_TWILIO_PHONE_NUMBER'
+    }
+    
+
+          
 
             #---------------------------------------------------------------------
   

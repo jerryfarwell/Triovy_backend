@@ -2,6 +2,7 @@
 require 'twilio-ruby'
 
 class SmsService
+ def self.send_sms_notification(message)
     account_sid = Rails.application.credentials.dig(:twilio, :account_sid)
     auth_token = Rails.application.credentials.dig(:twilio, :auth_token)
     @client = Twilio::REST::Client.new(account_sid, auth_token)
@@ -13,5 +14,6 @@ class SmsService
     )
     
     puts message.sid  
+ end
 end
 
