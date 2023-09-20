@@ -1,19 +1,29 @@
-# app/services/twilio/sms_service.rb
+# app/services/sms_service.rb
+
 require 'twilio-ruby'
 
 class SmsService
- def self.send_sms_notification(message)
-    account_sid = Rails.application.credentials.dig(:twilio, :account_sid)
-    auth_token = Rails.application.credentials.dig(:twilio, :auth_token)
-    @client = Twilio::REST::Client.new(account_sid, auth_token)
-    
+  def initialize(quote)
+    @quote = quote
+    @account_sid = Rails.application.credentials.dig(:twilio, :account_sid)
+    @auth_token = Rails.application.credentials.dig(:twilio, :auth_token)
+  end
+
+  def send_quote_sms
+    @client = Twilio::REST::Client.new(@account_sid, @auth_token)
+  
+    message_body = "New Quote:\n"
+    @quote.attributes.each do |attr, value|
+      message_body << "#{attr}: #{value}\n"
+    end
+
     message = @client.messages.create(
-      body: 'hello Boss this the second message BOSS',
+      body: message_body,
       from: '+17242046854',
       to: '+33753226897'
     )
-    
-    puts message.sid  
- end
-end
 
+    puts "Your quote has been sent successfully"
+    puts message.sid
+  end
+end

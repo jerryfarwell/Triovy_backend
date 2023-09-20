@@ -15,7 +15,7 @@ class QuotesController < ApplicationController
     @quote = Quote.new(quote_params)
     if @quote.save
       QuoteMailer.send_quote(@quote).deliver_now
-      @client.messages.body
+      SmsService.new(@quote).send_quote_sms # Send the SMS notification
       #redirect_to root_path, success: "Your message has been sent successfully"
       puts "Your quote has been sent successfully"
     else
